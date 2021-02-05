@@ -10,7 +10,7 @@ function getUsers(db, req, res) {
       }
       let obj = { msgs: {} }
       rows.forEach(row => { obj.msgs[row.userId] = row })
-      console.log(obj)
+    //   console.log(obj)
       res.send(obj);
     })
   }

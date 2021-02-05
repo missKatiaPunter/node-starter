@@ -14,9 +14,11 @@
             const f1 = document.querySelector('.f1');
             f1.addEventListener('submit', event => {
                 event.preventDefault();
-                fetch(`https://dog.ceo/api/breeds/image/random`)
-                    .then((res)=>res.json())
-                    .then(res=>console.log(res));
+                fetch('/api/users')
+                    // .then((res)=>res.json())
+                    .then(res => res.text())
+                    // .then(res=>console.log("here", res));
+                    .then(res=>document.querySelector('.f1r').innerText=JSON.stringify(res));
             });
         </script>
     </body>
