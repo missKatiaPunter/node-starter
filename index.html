@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form class="f1">
+            <input type="submit" value="Get Messages">
+        </form>
+        <div class="f1r"></div>
+        <script>
+            const f1 = document.querySelector('.f1');
+            f1.addEventListener('submit', event => {
+                event.preventDefault();
+                fetch(`https://dog.ceo/api/breeds/image/random`)
+                    .then((res)=>res.json())
+                    .then(res=>console.log(res));
+            });
+        </script>
+    </body>
+</html>
