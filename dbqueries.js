@@ -7,13 +7,13 @@ let { archiveSteve } = require('./sql/archiveSteveJobs');
 let { postMessage } = require('./sql/postMessage');
 
 // Task D13
-function getUsers(db, req, res) {
+function getAllMessages(db, req, res) {
     db.all(`write your query here`, (err, rows) => {
         if (err) {
             console.error(err.message);
         }
         if (!rows) {
-            res.send({ error: "no users found" })
+            res.send({ error: "no messages found" })
         }
         res.send(rows);
     })
@@ -101,4 +101,4 @@ function postAMessage(db, req, res) {
     })
 }
 
-module.exports = { getUsers, organiseUsers, createUser, getFromFranklins, updateSteveJobs, deleteOldMess, archiveJobs, postAMessage }
+module.exports = { getAllMessages, organiseUsers, createUser, getFromFranklins, updateSteveJobs, deleteOldMess, archiveJobs, postAMessage }

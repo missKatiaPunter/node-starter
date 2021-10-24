@@ -5,6 +5,12 @@
 // their owner ensuring you also appropriately set the message’s initial archive state (where outlined in the test data).  
 
 const insertMessages = `
-
+INSERT INTO "Messages"(
+    message,
+    userid,
+    archive)
+    VALUES
+    ("Always bear in mind that your own resolution to success is more important than any other one thing.", 1000, 0),
+    ("An unexamined life is not worth living.", 1010, 0);
 `
 module.exports = { insertMessages };

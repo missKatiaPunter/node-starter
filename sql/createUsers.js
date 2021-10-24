@@ -5,5 +5,6 @@
 // Use “strftime('%s','now')” rather than “CURRENT_TIMESTAMP”.
 const createUsers =`
 
+
 `
 module.exports = { createUsers };

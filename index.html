@@ -80,13 +80,13 @@
 
     <hr>
 
-    <!-- D13. Creates a form with the submit button that will trigger getting ALL unsorted users from the database -->
-    <h2>D13 task. Get all users</h2>
-    <form class="getting-users-form">
-        <input type="submit" value="Get Users">
+    <!-- D13. Creates a form with the submit button that will trigger getting ALL messages from the database -->
+    <h2>D13 task. Get all messages</h2>
+    <form class="getting-messages-form">
+        <input type="submit" value="Get Messages">
     </form>
     <!-- Creates a div element where users will be output -->
-    <div class="users-div-shown"></div>
+    <div class="messages-div-shown"></div>
 
     <hr>
 
@@ -102,24 +102,23 @@
     <div id="show added message"></div>
 
     <script>
-        const buttonGetUsers = document.querySelector('.getting-users-form');
-        buttonGetUsers.addEventListener('submit', event => {
+        const buttongetAllMessages = document.querySelector('.getting-messages-form');
+        buttongetAllMessages.addEventListener('submit', event => {
             event.preventDefault();
-            fetch('/api/users')
+            fetch('/api/messages')
                 .then((res)=>res.json())
                 .then(res=> {
                     console.log(res);
-                    const container = document.querySelector('.users-div-shown');
+                    const container = document.querySelector('.messages-div-shown');
                     const heading = document.createElement("h1");
-                    heading.textContent = "All Users";
+                    heading.textContent = "All Messages";
                     container.appendChild(heading);
                     const ol=document.createElement('ol');
                     container.appendChild(ol);
-                    res.forEach(user => {
+                    res.forEach(item => {
                         const li = document.createElement('li');
-                        const { friendlyname, emailaddress, admin, timestamp } = user;
-                        const isAdmin = admin ? 'Admin' : "Non Admin";
-                        li.appendChild(document.createTextNode(friendlyname+', '+emailaddress+', '+isAdmin+', '+timestamp));
+                        const { message } = item;
+                        li.appendChild(document.createTextNode(message));
                         ol.appendChild(li);
                 });
             });

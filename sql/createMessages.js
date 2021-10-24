@@ -5,5 +5,7 @@
 // Repeat the setup for “CURRENT_TIMESTAMP” as outlined in the previous requirement.
 
 const createMessages = `
+
+
 `
 module.exports = { createMessages };

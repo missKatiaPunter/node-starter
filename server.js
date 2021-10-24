@@ -9,8 +9,8 @@ app.get('/', function(req, res) {
     res.sendFile("index.html", { root: __dirname })
 });
 
-app.get('/api/users', function(req, res) {
-    query.getUsers(db, req, res);
+app.get('/api/messages', function(req, res) {
+    query.getAllMessages(db, req, res);
 });
 
 app.get('/api/sort-users', function(req, res) {
